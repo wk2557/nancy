@@ -1,6 +1,7 @@
 var csv = require('csv'),
 	config = require('./config'),
 	logger = require('./logger'),
+	importer = require('./importer'),
 	C_ZONE = 0,
 	C_BUILDDING = 1,
 	C_FLOOR = 2,
@@ -46,14 +47,15 @@ csv()
 		}
 
 		logger.info('Starting to import data...... totle lines: ' + data.length);
+		importer.run(data);
 	});
 
 // 数据校验&转换
 function validate(record){
 	if(record.active.toLowerCase() == 'yes')
-		record.active = true;
+		record.active = 1;
 	else if(record.active.toLowerCase() == 'no')
-		record.active = false;
+		record.active = 0;
 	else {
 		logger.error('Line ' + record.index + ' field ACTIVE is set invalid value: ' + record.active);
 		return false;
