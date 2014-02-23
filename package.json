@@ -1,0 +1,14 @@
+{
+  "name": "nancy-importer",
+  "version": "0.0.1",
+  "description": "import nancy's data",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "winston": "*",
+    "msnodesql": "*",
+    "csv": "*"
+  }
+}
