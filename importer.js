@@ -1,6 +1,7 @@
 var sql=require('msnodesql')
   , logger = require('./logger')
   , config = require('./config')
+  , async = require('async')
 
 
 var conn_str = "Driver={SQL Server Native Client 11.0};Server={(local)\\" 

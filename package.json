@@ -9,6 +9,7 @@
   "dependencies": {
     "winston": "*",
     "msnodesql": "*",
+    "async": "*",
     "csv": "*"
   }
 }

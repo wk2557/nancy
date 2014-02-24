@@ -51,7 +51,7 @@ csv()
 			logger.error('Please fix all import data.');
 		}
 		else{
-			logger.info('Starting to import data...... totle lines: ' + data.length);
+			logger.info('Starting to import data...... ');
 			importer.run(data);
 		}
 	});
