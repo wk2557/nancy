@@ -23,6 +23,7 @@ csv()
 	})
 	.to.array(function(data_in_array) {
 		var data = [];
+		var hasError = false;
 		for(var i = 1, length = data_in_array.length; i < length; ++i){
 			var r = {
 				index: i,
@@ -41,13 +42,18 @@ csv()
 				accountId: data_in_array[i][C_ACCOUNTID]
 			}
 
-			if(!validate(r)) return false;
+			if(!validate(r)) hasError = true;
 
 			data.push(r);
 		}
 
-		logger.info('Starting to import data...... totle lines: ' + data.length);
-		importer.run(data);
+		if(hasError){
+			logger.error('Please fix all import data.');
+		}
+		else{
+			logger.info('Starting to import data...... totle lines: ' + data.length);
+			importer.run(data);
+		}
 	});
 
 // 数据校验&转换
