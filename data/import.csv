@@ -1,17 +1,17 @@
 ZONE,Building,Floor,Room #,Room Type,Floor Type,Active,SQM,Length,Width,Fixtures,Beds,AccountID
-KDAH 018,In Patient,1F,Patient Room 1,Patient Room Semi,Hard Surface,YES,40.54,,,3,6,15
-KDAH 018,In Patient,1F,Office,Housekeeping - Room,Hard Surface,Yes,40.54,,,4,6,15
-KDAH 018,In Patient,floor 2,MRI,Housekeeping - Room,Hard Surface,Yes,9.98,,,5,5,15
-KDAH 018,In Patient,floor 2,toilet 1,Restroom 7 Day,Sq.Ft. Hard Surface,Yes,9.98,,,6,,15
-KDAH 018,Office Building,1F,patient room 42,Patient Room Ward,Sq.Ft. Hard Surface,No,40.54,,,3,6,15
-KDAH 018,Office Building,1F,patient room 43,Patient Room Ward,Sq.Ft. Hard Surface,Yes,40.54,,,4,6,15
-KDAH 018,Office Building,floor 2,patient room 44,Patient Room Ward,Sq.Ft. Hard Surface,Yes,9.98,,,5,5,15
-KDAH 018,Office Building,floor 2,patient room 45,Patient Room Ward,Sq.Ft. Hard Surface,Yes,9.98,,,6,,15
-KDAH 999,Out Patient,1F,Labby,Patient Room Private,Sq.Ft. Hard Surface,Yes,40.54,,,7,1,15
-KDAH 999,Out Patient,1F,toilet 1,ICU/CCU,Sq.Ft. Hard Surface,Yes,40.54,,,,4,15
-KDAH 999,Out Patient,2F,Office,Clinic Room,Sq.Ft. Hard Surface,No,9.98,,,,,15
-KDAH 999,Out Patient,2f,Meeting Rm,Clinic Room,Sq.Ft. Hard Surface,Yes,40.54,,,,1,15
+KDAH 013,In Patiean1,1F,Patient Room 1,Patient Room Semi,Sq.Ft. Hard Surface,YES,40.54,,,3,6,15
+KDAH 013,In Patient1,1F1,Office1,Housekeeping - Room,Sq.Ft. Hard Surface,Yes,40.54,,,4,6,15
+KDAH 013,In Patient1,floor 2,MRI,Housekeeping - Room,Sq.Ft. Hard Surface,Yes,9.98,,,5,5,15
+KDAH 013,In Patient1,floor 2,toilet 1,Restroom 7 Day,Sq.Ft. Hard Surface,Yes,9.98,,,6,,15
+KDAH 018,Office Buildi2ng,1F,patient room 42,Patient Room Ward,Sq.Ft. Hard Surface,No,40.54,,,3,6,15
+KDAH 018,Offiace Build2ing,1F,patient room 43,Patient Room Ward,Sq.Ft. Hard Surface,Yes,40.54,,,4,6,15
+KDAH 018,Office Buildi2ng,floor 2,patient room 44,Patient Room Ward,Sq.Ft. Hard Surface,Yes,9.98,,,5,5,15
+KDAH 018,Office Build2ing,floor 2,patient room 45,Patient Room Ward,Sq.Ft. Hard Surface,Yes,9.98,,,6,,15
+KDAH 999,Out Pati2ent,1F,Labby,Patient Room Private,Sq.Ft. Hard Surface,Yes,40.54,,,7,1,15
+KDAH 999,Out Pati2ent,1F,toilet 1,ICU/CCU,Sq.Ft. Hard Surface,Yes,40.54,,,,4,15
+KDAH 999,Out Pati2ent,2F,Office,Clinic Room,Sq.Ft. Hard Surface,No,9.98,,,,,15
+KDAH 999,Out Pati2ent,2f,Meeting Rm,Clinic Room,Sq.Ft. Hard Surface,Yes,40.54,,,,1,15
 KDAH 999,MB,1F,toilet 16,Restroom 7 Day,Sq.Ft. Hard Surface,Yes,40.54,,,7,1,15
-KDAH 789,MB,1F,toilet 17,Restroom 5 Day,Sq.Ft. Hard Surface,Yes,40.54,,,,4,15
+KDAH 999,MB,1F,toilet 17,Restroom 5 Day,Sq.Ft. Hard Surface,Yes,40.54,,,,4,15
 KDAH 999,MB,2F,toilet 18,Restroom 5 Day,Sq.Ft. Hard Surface,No,9.98,,,,,15
-KDAH 999,MB,2f,toilet 19,Restroom 5 Day,Sq.Ft. Hard Surface,Yes,40.54,,,,1,15
+KDAH 999,2,2f,toilet 19,Restroom 5 Day,Sq.Ft. Hard Surface,Yes,40.54,,,,1,15
