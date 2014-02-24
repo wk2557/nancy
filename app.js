@@ -81,5 +81,8 @@ function validate(record){
 	}
 	record.accountId = accountId;
 
+	if(record.length == '') record.length = null;
+	if(record.width == '') record.width = null;
+
 	return true;
 }
