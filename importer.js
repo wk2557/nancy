@@ -39,8 +39,7 @@ exports.run = function(data) {
               spaceContents[key] = results.rows[i][0];
             }
 
-              console.log('handle line: ' + 13);
-              handle(conn, data[13]);
+            handle(conn, data, 0);
           }
         }) // space content cache
       }
@@ -48,10 +47,13 @@ exports.run = function(data) {
   }) //sql.open
 }
 
-function handle(conn, record){
+function handle(conn, data, pos){
+
+}
+
+function handleZone(conn, record){
   // zone
   record.zone_spaceTypeId = spaceTypes['Zone & ' + record.accountId];
-
   conn.queryRaw("SELECT * from ISIS.TD_SPACE_INVENTORY WHERE tx_SpaceName=? AND in_AccountID=? AND in_SpaceTypeID=?", 
     [record.zone, record.accountId, record.zone_spaceTypeId], 
     function(err, results){
@@ -63,7 +65,7 @@ function handle(conn, record){
       if(results.rows.length > 0){
         logger.info('Line: ' + record.index + ' zone existed.');
       }else{
-        console.log('creating...');
+        var done = false;
         conn.queryRaw("INSERT INTO ISIS.TD_SPACE_INVENTORY(tx_SpaceName,in_AccountID,tf_Active,in_SpaceTypeID,tf_Inspectable,tf_HRS) VALUES(?,?,?,?,?,?)",
           [record.zone, record.accountId, record.active, record.zone_spaceTypeId, 1, 1],
           function(err, results){
@@ -72,10 +74,29 @@ function handle(conn, record){
               return logger.error(err);
             }
 
-            logger.info('Line: ' + record.index + ' create zone.');
+            if(results.rowcount > 0 && !done){
+              done = true;
+
+              conn.queryRaw("SELECT @@identity", 
+                function(err, results){
+                  if(err){
+                    logger.error('Line: ' + record.index + ' failed after new Zone created. Error detail: ')
+                    return logger.error(err);
+                  }
+
+                  if(results.rows.length > 0){
+                    record.zone_spaceId = results.rows[0][0];
+                    logger.info('Line: ' + record.index + ' new zone created. id: ' + record.zone_spaceId);
+                  }else{
+                    logger.error('Line: ' + record.index + ' failed at creating new Zone. Contact Junhua.')
+                  }
+                }
+              ) // conn.queryRaw 查询插入结果
+            } // 插入成功，执行回调一次
+              
           }
-        ) // conn.queryRaw
+        ) // conn.queryRaw 插入
       }
 
-  })  // conn.queryRaw
+  })  // conn.queryRaw 检查有没有这个记录
 }
